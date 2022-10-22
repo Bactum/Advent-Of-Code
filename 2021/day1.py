@@ -1,6 +1,7 @@
 import os
 
-file = os.path.join("./data", "input1.txt")
+#file = os.path.join("./data", "input1.txt")
+file= "./Advent-Of-Code/2021/data/input1.txt"
 
 data = []
 count = 0
