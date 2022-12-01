@@ -1,6 +1,3 @@
-import os
-
-#file = os.path.join("./data", "input1.txt")
 file= "./Advent-Of-Code/2022/data/day1.txt"
 
 data = []
@@ -22,4 +19,4 @@ sums.sort()
 for i in range(1, 4):
     sumssorted.append(sums[-i])
 
-print(f'Lösung: \nDay 1: {max(sums)}\nDay2 : {sum(sumssorted)}')
+print(f'Lösung: \nDay 1: {max(sums)}\nDay 2: {sum(sumssorted)}')
