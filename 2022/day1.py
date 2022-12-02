@@ -1,3 +1,4 @@
+# type: ignore
 import timeit
 
 start_time = timeit.default_timer()
