@@ -1,3 +1,8 @@
+import timeit
+
+start_time = timeit.default_timer()
+
+#file= "./Advent-Of-Code/2022/data/example.txt"
 file= "./Advent-Of-Code/2022/data/day1.txt"
 
 data = []
@@ -19,4 +24,8 @@ sums.sort()
 for i in range(1, 4):
     sumssorted.append(sums[-i])
 
-print(f'Lösung: \nDay 1: {max(sums)}\nDay 2: {sum(sumssorted)}')
+print(f'Solution Day 1: \nPart 1: {max(sums)}\nPart 2: {sum(sumssorted)}')
+
+end_time = timeit.default_timer()
+
+print(f'Runtime: {end_time - start_time} ms')
