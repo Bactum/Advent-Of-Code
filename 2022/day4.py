@@ -4,8 +4,6 @@ import timeit
 start_time = timeit.default_timer()
 
 import os
-import re
-import string
 from datetime import date
 
 from aocd import submit
