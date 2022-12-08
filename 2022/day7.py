@@ -17,35 +17,54 @@ yyyy = today.strftime("%Y")
 #os.system('aocd ' + dd + ' ' + yyyy + '  > ./Advent-Of-Code/' + yyyy + '/data/day' + dd + '.txt')
 
 #file = './Advent-Of-Code/' + yyyy + '/data/day' + dd + '.txt'
-#file = './Advent-Of-Code/' + yyyy + '/data/example.txt'
-file = 'C:\\Users\\daniel.weigel\\Documents\\Visual Studio 2022\\GIT\\Advent-Of-Code\\' + yyyy + '\\data\\example.txt'
+file = './Advent-Of-Code/' + yyyy + '/data/example.txt'
+#file = 'C:\\Users\\daniel.weigel\\Documents\\Visual Studio 2022\\GIT\\Advent-Of-Code\\' + yyyy + '\\data\\example.txt'
 #file = 'C:\\Users\\daniel.weigel\\Documents\\Visual Studio 2022\\GIT\\Advent-Of-Code\\' + yyyy + '\\data\\day' + dd + '.txt'
 
-tree = []
-current_Directory = ''
-depth = 0
-with open(file, 'r') as read:
-    data = read.read().split('\n')
-    for index, lines in enumerate(data):
-        if '$ cd /' in lines:
-            depth = 0
-            tree.append(['- ' + lines])
-        elif '$ ls' in lines:
-            
+tree = {'/':{}}
+current_dir = ''
 
-#        elif 'dir ' in lines and lines[1].isalpha():
-#            depth += 1
-#            tree.append(['\t- ' + lines])
-#        elif lines[:3].isdigit():
-#            if data[index-1] == '$ ls':
-#                current_Directory = data[index-2]
-#            elif 'dir ' in data[index-1]:
-#                current_Directory = data[index-1]           
-#            for i, element in enumerate(tree):
-#                if ('\t- ' + current_Directory) in element:
-#                            tree[i].append('\t\t-' + lines.split(' ')[1] + ' size: ' + lines.split(' ')[0])
-#    for i, lines in enumerate(tree):
-#        print(*tree[i])
+with open(file, 'r', newline='\n') as read:
+    data = read.read().split('\n')
+    for i, lines in enumerate(data):
+        each_line = lines.split(' ')
+        if each_line[0] == '$':
+            if each_line[1] == 'cd':
+                if each_line[2].isalpha():
+                    current_dir = str(each_line[2])
+                    if str(each_line[2]) in tree:
+                        continue
+                    else:
+                        tree[str(each_line[2])] = {}
+                elif each_line[2] == '/':
+                    current_dir = str(each_line[2])
+                elif each_line[2] == '..':
+                    continue
+            if each_line[1] == 'ls':
+                continue
+        elif each_line[0] == "dir":
+            if str(each_line[1]) in tree:
+                continue
+            else:
+                continue
+        elif each_line[0].isnumeric():
+            tree[str(current_dir)].update({each_line[1]: int(each_line[0])})
+
+print(tree['a'])
+
+for key in tree:
+    summe = 0
+    summe = sum(tree[key])
+    print(summe)
+    
+
+            
+                   
+
+                
+                
+        
+        
 
 
   
