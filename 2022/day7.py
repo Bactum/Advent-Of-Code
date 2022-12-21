@@ -17,8 +17,8 @@ yyyy = today.strftime("%Y")
 #os.system('aocd ' + dd + ' ' + yyyy + '  > ./Advent-Of-Code/' + yyyy + '/data/day' + dd + '.txt')
 
 #file = './Advent-Of-Code/' + yyyy + '/data/day' + dd + '.txt'
-file = './Advent-Of-Code/' + yyyy + '/data/example.txt'
-#file = 'C:\\Users\\daniel.weigel\\Documents\\Visual Studio 2022\\GIT\\Advent-Of-Code\\' + yyyy + '\\data\\example.txt'
+#file = './Advent-Of-Code/' + yyyy + '/data/example.txt'
+file = 'C:\\Users\\daniel.weigel\\Documents\\Visual Studio 2022\\GIT\\Advent-Of-Code\\' + yyyy + '\\data\\example.txt'
 #file = 'C:\\Users\\daniel.weigel\\Documents\\Visual Studio 2022\\GIT\\Advent-Of-Code\\' + yyyy + '\\data\\day' + dd + '.txt'
 
 tree = {'/':{}}
