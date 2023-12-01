@@ -4,8 +4,7 @@ import timeit
 start_time = timeit.default_timer()
 
 #file= "./Advent-Of-Code/2022/data/example.txt"
-file= "./Advent-Of-Code/2022/data/day1.txt"
-
+file= "2022/data/day01.txt"
 with open(file) as read:
     data=read.read().split('\n')
     print(data)
